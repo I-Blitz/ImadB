@@ -1,10 +1,10 @@
-Welcome on my personal page. I am Badda Imad, a student at Sup Galilée enrolled in MACS, applied maths and computer science 
+Welcome on my personal page. I am Badda Imad, a last year engineering student at Sup Galilée enrolled in MACS, applied maths and computer science 
 
 Personal projects, CV, research reports and surveys are available below.
 
 ----------------------------------------------------------------------------
 
-Bienvenue sur ma page personnelle. Je m'appelle Badda Imad, je suis étudiant à Sup Galilée en MACS, Mathématiques Appliqués et Calcul Scientifique.
+Bienvenue sur ma page personnelle. Je m'appelle Badda Imad, je suis étudiant ingénieur en dernière année (BAC+5) à Sup Galilée en MACS, Mathématiques Appliqués et Calcul Scientifique.
 
 CV, rapports de recherche, *survey* et projets personnels, sont disponibles ci-dessous.
 
