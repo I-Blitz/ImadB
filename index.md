@@ -25,7 +25,7 @@ en fr
 
 ### Personal Projects
  
-* [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/index.md)
+* [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)
 ----------------------------------------------------------------------------
 
 
