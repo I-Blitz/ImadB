@@ -10,9 +10,9 @@ CV, rapports de recherche, *survey* et projets personnels, sont disponibles ci-d
 
 ### CV
 
-[English version of my CV](https://I-Blitz.github.io/ImadB/Badda_Imad_Nov_CV_ANG.pdf ). (Last updated : Nov 10)
+[English version of my CV](https://I-Blitz.github.io/ImadB/CV/Badda_Imad_Nov_CV_ANG.pdf ). (Last updated : Nov 10)
 
-[Version francaise de mon CV](https://I-Blitz.github.io/DianeMT/Badda_Imad_Nov_CV_FR.pdf). (Derniere Maj : Nov 10)
+[Version francaise de mon CV](https://I-Blitz.github.io/ImadB/CV/Badda_Imad_Nov_CV_FR.pdf). (Derniere Maj : Nov 10)
 
 
 ### Work/Internship Experiences
@@ -28,7 +28,6 @@ en fr
 
 ----------------------------------------------------------------------------
 
-J'ai actuellement 2 projets personnels en cours.
 
  
 
