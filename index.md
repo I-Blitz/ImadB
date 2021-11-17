@@ -1,4 +1,4 @@
-Welcome on my personal page. I am Badda Imad, a last year engineering student at Sup Galilée enrolled in MACS, applied maths and computer science 
+Welcome on my personal page. I am Badda Imad, a last year engineering student at Sup Galilée enrolled in MACS, applied maths and computer science. I am currently looking for an internship in Market Finance / Data Science for a duration of 6 months, starting from March 2022 and 
 
 Personal projects, CV, research reports and surveys are available below.
 
@@ -15,12 +15,13 @@ CV, rapports de recherche, *survey* et projets personnels, sont disponibles ci-d
 [Version francaise de mon CV](https://I-Blitz.github.io/ImadB/CV/Badda_Imad_Nov_CV_FR.pdf). (Derniere Maj : Nov 10)
 
 
-### Work/Internship Experiences
+### Academic Projects
 
 en anglais
 
+* [Domain Decomposition](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/Projet_DD_MACS_2.pdf)
 ----------------------------------------------------------------------------
-en fr
+* [Décomposition de Domaines](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)
 
 
 ### Personal Projects
@@ -28,6 +29,7 @@ en fr
 * [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)
 ----------------------------------------------------------------------------
 
+* [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)
 
  
 
