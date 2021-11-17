@@ -17,17 +17,12 @@ CV, rapports et projets personnels, sont disponibles ci-dessous.
 
 ### Academic Projects
 
-en anglais
-
-* [Domain Decomposition](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)
 ----------------------------------------------------------------------------
 * [Décomposition de Domaines](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)
 
 
 ### Personal Projects
  
-* [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)
-----------------------------------------------------------------------------
 * [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)
 
  
