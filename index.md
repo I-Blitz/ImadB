@@ -21,7 +21,8 @@ CV, rapports et projets personnels, sont disponibles ci-dessous.
 
 ### Academic Projects
 ----------------------------------------------------------------------------
-* [Décomposition de Domaines](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)
+* [Décomposition de Domaines](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)   
+
 Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https://www.math.univ-paris13.fr/~japhet/cjaphetmain.htm)
 
 
