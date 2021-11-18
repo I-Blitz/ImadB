@@ -1,14 +1,16 @@
-Welcome on my personal page. I am Badda Imad, a last year engineering student at Sup Galilée enrolled in MACS, applied maths and computer science.   
-I am currently looking for a 6 months internship in Market Finance / Data Science starting from March 2022.   
-Finally for my Projet de Fin d'Etude (master's thesis) i'm working under [Mohammed Mrad](http://www.cmap.polytechnique.fr/~mrad/) and I work on progressive utility and their use for the creation of long term yield curves.
+Welcome on my personal page. I am Badda Imad, a last year engineering student at Sup Galilée enrolled in MACS, applied maths and computer science.      
+For my Projet de Fin d'Etude (master's thesis) i'm working under [Mohammed Mrad](http://www.cmap.polytechnique.fr/~mrad/) and I work on progressive utility and their use for the creation of long term yield curves.   
+Finally, I am currently looking for a 6 months internship in Market Finance / Data Science starting from March 2022.   
+
 
 Personal projects, CV, research reports and surveys are available below.
 
 ----------------------------------------------------------------------------
 
 Bienvenue sur ma page personnelle. Je m'appelle Badda Imad, je suis étudiant ingénieur en dernière année (BAC+5) à Sup Galilée en MACS, Mathématiques Appliqués et Calcul Scientifique.   
-Je suis à la recherche d'un stage en finance de marché / data science pour une durée de 6 mois à partir de Mars 2022.   
-Finalement, pour mon projet de fin d'étude, je suis encadré par [Mohammed Mrad](http://www.cmap.polytechnique.fr/~mrad/) et je travaille sur les utilités progressives dynamiques et leur utilisation dans la création de courbe de taux long termes.
+Pour mon projet de fin d'étude, je suis encadré par [Mohammed Mrad](http://www.cmap.polytechnique.fr/~mrad/) et je travaille sur les utilités progressives dynamiques et leur utilisation dans la création de courbe de taux long termes.    
+Finalement, je suis à la recherche d'un stage en finance de marché / data science pour une durée de 6 mois à partir de Mars 2022.   
+
 
 CV, rapports et projets personnels, sont disponibles ci-dessous.
 
@@ -23,12 +25,22 @@ CV, rapports et projets personnels, sont disponibles ci-dessous.
 ----------------------------------------------------------------------------
 * [Décomposition de Domaines](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)   
 
-Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https://www.math.univ-paris13.fr/~japhet/cjaphetmain.htm)
+Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https://www.math.univ-paris13.fr/~japhet/cjaphetmain.htm). Décomposition de domaines pour les EDP d'advection diffusion.   
+- Etude théorique du cas stationaire et instationnaire (écriture du problème et de l'algorithme de DD, caractère bien défini et convergence de l'algorithme de Schwarz).   
+- écriture du schéma espace-temps (Euler implicite en temps et CrouzeixRaviart en espace).   
+- réalisé en Freefem++ 
+- Écriture d'un rapport en LaTeX
 
 
 ### Personal Projects
 ----------------------------------------------------------------------------
 * [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)
+Pricing d'un call sur un basket d'assets
+- Simulation de processus stochastiques (Mouvement Brownien, évolution du prix d'un actif) 
+- Monte-Carlo avec son intervalle de confiance 
+- Méthode de réduction de variance par variables antithétiques et variable de contrôle
+- Réalisé en python
+
 
  
 
