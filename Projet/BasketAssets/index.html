@@ -14539,7 +14539,7 @@ Si on arrive à montrer qu'une telle décomposition de $\Gamma^{'}$ existe, on p
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Conditions-sur-$\rho$">Conditions sur $\rho$<a class="anchor-link" href="#Conditions-sur-$\rho$">&#182;</a></h3><p>Pour appliquer Cholesky sur $\Gamma_{'}$ il y'a des conditions à vérifier. La première étant que la matrice soit symétrique ce qui est (par déf de $\Gamma_{'}$ ) le cas. La seconde est que la matrice soit définie positive ce qui peut poser problème.<br>
+<h3 id="Conditions-sur-$\rho$">Conditions sur $\rho$<a class="anchor-link" href="#Conditions-sur-$\rho$">&#182;</a></h3><p>Pour appliquer Cholesky sur $\Gamma^{'}$ il y'a des conditions à vérifier. La première étant que la matrice soit symétrique ce qui est - par déf de $\Gamma^{'}$ - le cas. La seconde est que la matrice soit définie positive ce qui peut poser problème.<br>
 En effet comme nous sommes dans un cas particulier où les corrélatations $\rho$ entre les actifs sont les mêmes, on se retrouve avec la matrice suivante : 
 $$
 \Gamma^{'} = \begin{pmatrix}
@@ -14556,12 +14556,13 @@ $$
     \rho &gt; \frac{-1}{d-1} 
 \end{equation*}
 $$
-Maintenant si on s'intéresse à la matrice $\Gamma^{'} - (1-\rho) I_{d}$, on voit bien qu'elle est de rang 1. Donc $ (1-\rho)$ est une valeur propre de $\Gamma^{'}$ de multiplicité d-1. De la même façon, comme on veut que cette valeur propre soit strictement positive, on trouve que :
+Maintenant si on s'intéresse à la matrice $\Gamma^{'} - (1-\rho) I_{d}$, on voit bien qu'elle est de rang 1 (car toutes les lignes sont les mêmes). Donc $ (1-\rho)$ est une valeur propre de $\Gamma^{'}$ de multiplicité d-1. De la même façon, comme on veut que cette valeur propre soit strictement positive, on trouve que :
 $$
 \begin{equation*}
     \rho &lt; 1 
 \end{equation*}
 $$
+On a donc 2 conditions sur $\rho$ et comme on a toutes nos valeurs propres, il n'y'a pas d'autres conditions à chercher.<br>
 Donc finalement pour pouvoir appliquer Cholesky à $\Gamma^{'}$, il faudra avoir $\rho \in \bigl] \frac{-1}{d-1} ; 1 \bigr[ $</p>
 
 </div>
@@ -14655,6 +14656,7 @@ Donc finalement pour pouvoir appliquer Cholesky à $\Gamma^{'}$, il faudra avoir
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Evolution-du-prix-d'un-actif">Evolution du prix d'un actif<a class="anchor-link" href="#Evolution-du-prix-d'un-actif">&#182;</a></h3><p>Maintenant que l'on sait comment modéliser d mouvement browniens corrélés, on peut s'intéresser à l'évolution du prix d'un actif.<br>
+Ici on suppose que nos actifs sont solutions de l'EDS de Black-Scholes. Cette EDS possède une solution analytique qui est la suivante :<br>
 $$
 \begin{equation*}
     S_{t}^{i} = s_{0}^{i} \exp{(\sigma W_{t}^{i} + (r- \frac{\sigma^2}{2})t)}
@@ -14724,12 +14726,6 @@ $$</p>
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Maintenant qu'on a bien l'évolution du prix de nos actifs, on peut s'intéresser au prix de notre option sur indice.</p>
-
-</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
