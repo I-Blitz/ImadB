@@ -14313,12 +14313,12 @@ $\forall (i,j) \in [1,d]^{2}$ tel que $i \ne j$, $d&lt;W^{i},W^{j}&gt;_{t} = \rh
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### paramètres &quot;physique&quot;</span>
 <span class="n">d</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">S0</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span>
@@ -15632,42 +15632,79 @@ avec $X_{i}$ des v.a i.i.d de même loi que $X$ et $Y_{i}$ des v.a i.i.d de mêm
 avec $Z_{T} = a_{1} \frac{S_{0}^{1}}{I_{0}} log \bigl( \frac{S_{T}^{1}}{S_{0}^{1}} \bigr) + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} log \bigl( \frac{S_{T}^{d}}{S_{0}^{d}} \bigr)$<br>
 Nous allons commencer à nous intéresser à la loi de $Z_{T}$.<br>
 $$
-\begin{align*}
-    Z_{T} &amp;= a_{1} \frac{S_{0}^{1}}{I_{0}} log \bigl( \frac{S_{T}^{1}}{S_{0}^{1}} \bigr) + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} log \bigl( \frac{S_{T}^{d}}{S_{0}^{d}} \bigr) \\
-    &amp;= a_{1} \frac{S_{0}^{1}}{I_{0}} log \bigl( \frac{S_{0}^{1}}{S_{0}^{1}} exp\bigl(r-\frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{1} \bigr) + ... + log \bigl( \frac{S_{0}^{d}}{S_{0}^{d}} exp\bigl(r-\frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{d} \bigr) \\
-    &amp;= a_{1} \frac{S_{0}^{1}}{I_{0}} \Bigl( \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{1} \Bigr) + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} \Bigl( \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{d} \Bigr)
-\end{align*}
+\begin{equation*}
+    Z_{T} = \frac{a_{1} S_{0}^{1}}{I_{0}} log \left( \frac{S_{T}^{1}}{S_{0}^{1}} \right) + ... + \frac{a_{d} S_{0}^{d}}{I_{0}} log \left( \frac{S_{T}^{d}}{S_{0}^{d}} \right) 
+\end{equation*}
 $$
-$Z_{T}$ est une somme de mouvements browniens donc de loi normales. Donc par stabilité de la loi normale, $Z_{T} \sim \mathcal{N}(\mu,\tilde \sigma ^{2})$
+Intéréssons-nous à $log \left( \frac{S_{T}^{i}}{S_{0}^{i}} \right)$
+$$
+\begin{align*}
+    log \left( \frac{S_{T}^{1}}{S_{0}^{1}} \right) &amp;= log \left( \frac{S_{0}^{i}}{S_{0}^{i}} exp \left( \sigma_{i} W_{T}^{i} + \left( r - \frac{\sigma_{i}^{2}}{2} \right) T \right) \right) \\
+    &amp;= log \left( exp \left( \sigma W_{T}^{i} + \left( r - \frac{\sigma_{i}^{2}}{2} \right) T \right) \right) \\
+    &amp;=  \sigma W_{T}^{i} + \left( r - \frac{\sigma^{2}}{2} \right) T
+\end{align*}
+$$</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$
+\begin{align*}
+    Z_{T} &amp;= \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} log \bigl( \frac{S_{T}^{i}}{S_{0}^{i}} \bigr) \\
+    &amp;= \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \Bigl( \sigma_{i} W_{T}^{i} + \bigl( r - \frac{\sigma_{i}^{2}}{2}  \bigr) T\Bigr) \\
+    &amp;= \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} + \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T
+\end{align*}
+$$<p>$Z_{T}$ est une somme de mouvements browniens donc de loi normales. Donc par stabilité de la loi normale, $Z_{T} \sim \mathcal{N}(\mu,\tilde \sigma ^{2})$</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 $$
 \begin{align*}
     \mu &amp;= \mathbb{E} \Bigl[ Z_{T} \Bigr] \\
-        &amp;= \mathbb{E} \Bigl[ a_{1} \frac{S_{0}^{1}}{I_{0}} \Bigl( \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{1} \Bigr) + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} \Bigl( \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{d} \Bigr) \Bigr] \\
-        &amp;= a_{1} \frac{S_{0}^{1}}{I_{0}} \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} \bigl( r  - \frac{\sigma^{2}}{2} \bigr)T &amp;\quad \text{car } \mathbb{E} \Bigl[ W_{T}^{i} \Bigr] = 0 \\
-        &amp;= \frac{T}{I_{0}} \bigl(r - \frac{\sigma^{2}}{2} \bigr) \Bigl( a_{1} S_{0}^{1} + ... + a_{d} S_{0}^{d} \Bigr) \\
-        &amp;= \frac{T}{I_{0}} \bigl(r - \frac{\sigma^{2}}{2} \bigr) I_{0} \\
-        &amp;= \bigl(r - \frac{\sigma^{2}}{2} \bigr) T
+        &amp;= \mathbb{E} \Bigl[ \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} + \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T  \Bigr] \\ 
+        &amp;= \mathbb{E} \Bigl[ \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} \Bigr] + \mathbb{E} \Bigl[\sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T  \Bigr] \\
+        &amp;= \mathbb{E} \Bigl[\sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T  \Bigr] &amp;\quad \text{car } \mathbb{E}\Bigl[ W_{T}^{i} \Bigr] = 0 \\
+        &amp;= \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T
 \end{align*}
-$$</p>
+$$<p>en rajoutant les hypothèses suivantes : $a_{1} = ... = a_{d} = a$ , $ \sigma_{1} = ... = \sigma_{d} = \sigma$ et $S_{0}^{1} = ... = S_{0}^{d} = S_{0}$, on a :</p>
+$$
+\begin{align*}
+    \mu &amp;= \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T \\
+    &amp;= \sum_{i=1}^{d} \frac{a S_{0}}{I_{0}} \bigl( r - \frac{\sigma^{2}}{2} \bigr) T \\
+    &amp;= d \frac{a S_{0}}{I_{0}} \bigl( r - \frac{\sigma^{2}}{2} \bigr) T \\
+    &amp;= T \bigl( r - \frac{\sigma^{2}}{2} \bigr) &amp;\quad \text{car } d a S_{0} = I_{0}
+\end{align*}
+$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 $$
 \begin{align*}
     \tilde \sigma^{2} &amp;= \mathbb{V} \Bigl[ Z_{T} \Bigr] \\  
-    &amp;= \mathbb{V} \Bigl[ a_{1} \frac{S_{0}^{1}}{I_{0}} \Bigl( \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{1} \Bigr) + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} \Bigl( \bigl( r - \frac{\sigma^{2}}{2} \bigr)T + \sigma W_{T}^{d} \Bigr) \Bigr] \\
-    &amp;= \mathbb{V} \Bigl[ a_{1} \frac{S_{0}^{1}}{I_{0}} \sigma W_{T}^{1} + ... + a_{d} \frac{S_{0}^{d}}{I_{0}} \sigma W_{T}^{d} \Bigr] &amp;\quad \text{car termes constants et } \mathbb{V} \Bigl[ X + c \Bigr] = \mathbb{V} \Bigl[ X \Bigr] \\  
-    &amp;= \frac{1}{I_{0}^{2}} \mathbb{V} \Bigl[ a_{1} S_{0}^{1} \sigma W_{T}^{1} + ... + a_{d} S_{0}^{d} \sigma W_{T}^{d} \Bigr] \\    
-    &amp;= \frac{1}{I_{0}^{2}} \sum_{i=1}^{d} \mathbb{V} \Bigl[ a_{i} S_{0}^{i} \sigma W_{T}^{i} \Bigr] + \frac{2}{I_{0}^{2}} \sum_{1 \leq i &lt; j \leq d } Cov \Bigl( a_{i} S_{0}^{i} \sigma W_{T}^{i} , a_{j} S_{0}^{j} \sigma W_{T}^{j} \Bigr) \\    
-    &amp;= \sigma^{2} \Bigl( \frac{ (a_{1} S_{0}^{1})^{2} + ... + (a_{d} S_{0}^{d})^{2} }{I_{0}^{2}} \Bigr) \sum_{i=1}^{d} \mathbb{V} \Bigl[  W_{T}^{i} \Bigr] + \frac{2}{I_{0}^{2}} \sum_{1 \leq i &lt; j \leq d } a_{i} a_{j} S_{0}^{i} S_{0}^{j} \sigma^{2} Cov \Bigl( W_{T}^{i} ,  W_{T}^{j} \Bigr)    \\    
-    &amp;= \sigma^{2} \Bigl( \frac{ (a_{1} S_{0}^{1})^{2} + ... + (a_{d} S_{0}^{d})^{2} }{I_{0}^{2}} \Bigr) T d + \frac{2}{I_{0}^{2}} \sum_{1 \leq i &lt; j \leq d } a_{i} a_{j} S_{0}^{i} S_{0}^{j} \sigma^{2} Cov \Bigl( W_{T}^{i} ,  W_{T}^{j} \Bigr) \\    
-    &amp;= \sigma^{2} \Bigl( \frac{ (a_{1} S_{0}^{1})^{2} + ... + (a_{d} S_{0}^{d})^{2} }{I_{0}^{2}} \Bigr) T d + \frac{2}{I_{0}^{2}} \sum_{1 \leq i &lt; j \leq d } a_{i} a_{j} S_{0}^{i} S_{0}^{j} \sigma^{2} \rho T &amp;\quad \text{car } \forall i \ne j \text{, } \rho = \frac{Cov(W_{T}^{i},W_{T}^{j})}{T}  \\    
-    &amp;= \sigma^{2} \Bigl( \frac{ (a_{1} S_{0}^{1})^{2} + ... + (a_{d} S_{0}^{d})^{2} }{I_{0}^{2}} \Bigr) T d + \sigma^{2} \rho T \frac{2}{I_{0}^{2}} \sum_{1 \leq i &lt; j \leq d } a_{i} a_{j} S_{0}^{i} S_{0}^{j} \\   
-    &amp;= \sigma^{2} \Bigl( \frac{ (a_{1} S_{0}^{1})^{2} + ... + (a_{d} S_{0}^{d})^{2} }{I_{0}^{2}} \Bigr) T d + \sigma^{2} \rho T \frac{2}{I_{0}^{2}} \sum_{1 \leq i &lt; j \leq d } a_{1}^{2} (S_{0}^{1})^{2} &amp;\quad \text{par hypothèse }S_{0}^{1} = ... = S_{0}^{d} \text{ et } a_{1} = ... = a_{d} \\    
-    &amp;= \sigma^{2} \Bigl( \frac{ (a_{1} S_{0}^{1})^{2} + ... + (a_{d} S_{0}^{d})^{2} }{I_{0}^{2}} \Bigr) T d + \sigma^{2} \rho T \frac{1}{I_{0}^{2}} a_{1}^{2} (S_{0}^{1})^{2} d(d+1) \\   
-    &amp;= \sigma^{2} \Bigl( \frac{ d (a_{1} S_{0}^{1})^{2} }{I_{0}^{2}} \Bigr) T d + \sigma^{2} \rho T \frac{1}{I_{0}^{2}} a_{1}^{2} (S_{0}^{1})^{2} d(d+1) \\   
-    &amp;= \sigma^{2} d \Bigl( \frac{(a_{1} S_{0}^{1})}{I_{0}} \Bigr)^{2} T d + \sigma^{2} \rho T d (d+1)  \Bigl( \frac{a_{1} S_{0}^{1}}{I_{0}} \Bigr)^{2} \\
-    &amp;= \sigma^{2} d T \Bigl( \frac{(a_{1} S_{0}^{1})}{I_{0}} \Bigr)^{2}  \Bigl( d + \rho d (d+1) \Bigr) \\
-    &amp;= \sigma^{2} d^{2} T \Bigl( \frac{(a_{1} S_{0}^{1})}{I_{0}} \Bigr)^{2} \Bigl( 1 + \rho (d+1) \Bigr) \\
+    &amp;= \mathbb{V} \Bigl[ \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} + \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \bigl( r - \frac{\sigma_{i}^{2}}{2} \bigr) T  \Bigr] \\
+    &amp;= \mathbb{V} \Bigl[ \sum_{i=1}^{d} \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} \Bigr] &amp;\quad \mathbb{V} \Bigl[ X+c \Bigr] = \mathbb{V} \Bigl[ X \Bigr] \\
+    &amp;= \sum_{i=1}^{d} \mathbb{V} \Bigl[ \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} \Bigr] + 2 \sum_{i=1}^{d} \sum_{j=1}^{i-1} Cov \Bigl[ \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} W_{T}^{i} , \frac{a_{j} S_{0}^{j}}{I_{0}} \sigma_{j} W_{T}^{j} \Bigr] \\
+    &amp;= \sum_{i=1}^{d} \Bigl( \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} \Bigr)^{2} \mathbb{V} \Bigl[ W_{T}^{i} \Bigr] + \frac{2}{I_{0}^{2}} \sum_{i=1}^{d} \sum_{j=1}^{i-1} a_{i}  a_{j} S_{0}^{i} S_{0}^{j} \sigma_{i} \sigma_{j} Cov \Bigl[   W_{T}^{i} , W_{T}^{j} \Bigr] \\
+    &amp;= \sum_{i=1}^{d} \Bigl( \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} \Bigr)^{2} T + \frac{2}{I_{0}^{2}} \sum_{i=1}^{d} \sum_{j=1}^{i-1} a_{i}  a_{j} S_{0}^{i} S_{0}^{j} \sigma_{i} \sigma_{j} \rho_{i,j}  
 \end{align*}
-$$<p>Maintenant on peut s'intéresser à calculer $\mathbb{E} \Bigl[ Y \bigr]$ 
+$$<p>en rajoutant les hypothèses suivantes : $a_{1} = ... = a_{d} = a$ , $ \sigma_{1} = ... = \sigma_{d} = \sigma$ et $S_{0}^{1} = ... = S_{0}^{d} = S_{0}$, $\rho_{i,j} = \rho \forall i \ne j$ on a :</p>
+$$
+\begin{align*}
+    \tilde \sigma^{2} &amp;= \sum_{i=1}^{d} \Bigl( \frac{a_{i} S_{0}^{i}}{I_{0}} \sigma_{i} \Bigr)^{2} T + \frac{2}{I_{0}^{2}} \sum_{i=1}^{d} \sum_{j=1}^{i-1} a_{i}  a_{j} S_{0}^{i} S_{0}^{j} \sigma_{i} \sigma_{j} \rho_{i,j}T \\
+    &amp;= \Bigl( \frac{a S_{0}}{I_{0}} \sigma \Bigr)^{2} T d + \frac{2}{I_{0}^{2}} a^{2}  S_{0}^{2} \sigma^{2} \rho T d (d-1) \\
+    &amp;= \Bigl( \frac{a S_{0}}{I_{0}} \sigma \Bigr)^{2} T d + 2 \Bigl( \frac{a S_{0}}{I_{0}} \sigma \Bigr)^{2} T \rho d (d-1) \\
+    &amp;= T d \Bigl( \frac{a S_{0}}{I_{0}} \sigma \Bigr)^{2} \Bigl[ 1 + 2 \rho (d-1) \Bigr] 
+\end{align*}
+$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Maintenant on peut s'intéresser à calculer $\mathbb{E} \Bigl[ Y \bigr]$ 
 $$
 \begin{align*}
     \mathbb{E} \Bigl[ Y \bigr] &amp;= \mathbb{E} \Bigl[ \bigl( exp(Z_{T}) - K \bigr)_{+} \bigr] \\
@@ -15733,16 +15770,16 @@ Maintenant on peut s'intéresser à $B^{*}$. Etant donné que nous n'avons pas d
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Controle</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">ST</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">I0</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Controle</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">ST</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">I0</span><span class="p">):</span>
     <span class="n">Zt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ST</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
         <span class="n">Zt</span> <span class="o">+=</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">S0</span><span class="o">/</span><span class="n">I0</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ST</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">S0</span><span class="p">)</span>
         
-    <span class="n">Zt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Zt</span><span class="p">)</span> <span class="o">-</span> <span class="n">K</span> 
-    <span class="n">varControle</span> <span class="o">=</span> <span class="n">Zt</span><span class="o">*</span><span class="p">(</span><span class="n">Zt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Zt</span><span class="p">)</span> <span class="o">-</span> <span class="n">K</span> 
+    <span class="n">varControle</span> <span class="o">=</span> <span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span><span class="p">(</span> <span class="n">varControle</span> <span class="p">)</span>
 </pre></div>
 
@@ -15754,23 +15791,30 @@ Maintenant on peut s'intéresser à $B^{*}$. Etant donné que nous n'avons pas d
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ControleVariable</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">S0</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="n">Mc</span><span class="p">):</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
     <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="c1"># variable de contrôle</span>
     
-    <span class="n">I0</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">S0</span>
+    <span class="n">I0</span> <span class="o">=</span> <span class="n">S0</span>
     
-    <span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">T</span>
-    <span class="n">sigmaTilde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">S0</span><span class="o">/</span><span class="n">I0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rho</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="p">((</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="n">T</span>
+    
+    <span class="n">sigmaTilde</span> <span class="o">=</span> <span class="p">(</span> <span class="n">sigma</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">S0</span><span class="o">/</span><span class="n">I0</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">T</span><span class="o">*</span><span class="n">d</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> 
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sigmaTilde = &quot;</span><span class="p">,</span> <span class="n">sigmaTilde</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mu = &quot;</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
     
     <span class="n">d2</span> <span class="o">=</span> <span class="p">(</span> <span class="n">mu</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="n">sigmaTilde</span> 
     <span class="n">d1</span> <span class="o">=</span> <span class="n">d2</span> <span class="o">+</span> <span class="n">sigmaTilde</span>
     
-    <span class="n">Nd1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">M</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">d1</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> 
-    <span class="n">Nd2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">M</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">d2</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d1 = &quot;</span><span class="p">,</span> <span class="n">d1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d2 = &quot;</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+    
+    <span class="n">Nd1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">M</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">d1</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">Nd2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">M</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">d2</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> 
     <span class="n">EspY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="n">mu</span> <span class="o">+</span> <span class="p">(</span><span class="n">sigmaTilde</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span><span class="o">*</span><span class="n">Nd1</span> <span class="o">-</span> <span class="n">K</span><span class="o">*</span><span class="n">Nd2</span> 
     
     <span class="c1"># indépendant de MC</span>
@@ -15794,7 +15838,7 @@ Maintenant on peut s'intéresser à $B^{*}$. Etant donné que nous n'avons pas d
         <span class="n">S</span> <span class="o">=</span> <span class="n">prixActif</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">S0</span><span class="p">)</span>
         
         <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">PayoffIndice</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">K</span><span class="p">)</span>
-        <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Controle</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">I0</span><span class="p">)</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Controle</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">I0</span><span class="p">)</span>
    
     <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
     <span class="n">Beta_opti</span> <span class="o">=</span> <span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
@@ -15816,7 +15860,7 @@ Maintenant on peut s'intéresser à $B^{*}$. Etant donné que nous n'avons pas d
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prix</span><span class="p">,</span><span class="n">Intervalle</span> <span class="o">=</span> <span class="n">ControleVariable</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">S0</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">Mc</span><span class="p">)</span>
@@ -15841,9 +15885,13 @@ Maintenant on peut s'intéresser à $B^{*}$. Etant donné que nous n'avons pas d
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Nd1 = 0.02733
-Nd2 = 0.00054
-EspY vaut : 0.031798446655091475
+<pre>sigmaTilde =  0.6708203932499369
+mu =  0.275
+d1 =  -5.856948282569065
+d2 =  -6.527768675819002
+Nd1 = 0.0
+Nd2 = 0.0
+EspY vaut : 0.0
 E[Y] vaut : 0.0
 nan
 [nan nan]
@@ -15858,7 +15906,7 @@ nan
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\Imad\Anaconda3\lib\site-packages\ipykernel_launcher.py:41: RuntimeWarning: invalid value encountered in double_scalars
+<pre>C:\Users\Imad\Anaconda3\lib\site-packages\ipykernel_launcher.py:48: RuntimeWarning: invalid value encountered in double_scalars
 </pre>
 </div>
 </div>
