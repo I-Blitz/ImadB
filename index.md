@@ -28,7 +28,7 @@ CV, rapports et projets personnels, sont disponibles ci-dessous.
 Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https://www.math.univ-paris13.fr/~japhet/cjaphetmain.htm). Décomposition de domaines pour les EDP d'advection diffusion.   
 -- Etude théorique du cas stationaire et instationnaire (écriture du problème et de l'algorithme de DD, caractère bien défini et convergence de l'algorithme de Schwarz).   
 -- écriture du schéma espace-temps (Euler implicite en temps et CrouzeixRaviart en espace).   
--- réalisé en Freefem++ 
+-- réalisé en Freefem++       
 -- Écriture d'un rapport en LaTeX
 
 
@@ -37,9 +37,9 @@ Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https:
 * [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)   
 
 Pricing d'un call sur un basket d'assets
--- Simulation de processus stochastiques (Mouvement Brownien, évolution du prix d'un actif) 
--- Monte-Carlo avec son intervalle de confiance 
--- Méthode de réduction de variance par variables antithétiques et variable de contrôle
+-- Simulation de processus stochastiques (Mouvement Brownien, évolution du prix d'un actif)         
+-- Monte-Carlo avec son intervalle de confiance       
+-- Méthode de réduction de variance par variables antithétiques et variable de contrôle        
 -- Réalisé en python (numpy / matplotlib)
 
 
