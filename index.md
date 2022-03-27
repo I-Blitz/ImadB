@@ -36,7 +36,7 @@ Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https:
 ----------------------------------------------------------------------------
 * [Basket d'Assets](https://I-Blitz.github.io/ImadB/Projet/BasketAssets/)   
 
-Pricing d'un call sur un basket d'assets
+Pricing d'un call sur un basket d'assets          
 -- Simulation de processus stochastiques (Mouvement Brownien, évolution du prix d'un actif)         
 -- Monte-Carlo avec son intervalle de confiance       
 -- Méthode de réduction de variance par variables antithétiques et variable de contrôle        
