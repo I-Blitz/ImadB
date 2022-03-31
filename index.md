@@ -25,7 +25,7 @@ CV, rapports et projets personnels, sont disponibles ci-dessous.
 ----------------------------------------------------------------------------
 * [Décomposition de Domaines](https://I-Blitz.github.io/ImadB/Projet/DD/Projet_DD_MACS_2.pdf)   
 
-Projet tutoré de 2nde année sous l'encadrement de [Mme Caroline Japhet](https://www.math.univ-paris13.fr/~japhet/cjaphetmain.htm). Décomposition de domaines pour les EDP d'advection diffusion.   
+Projet tutoré de 2nde année fais avec [Martin Duguey](https://oskurmob.github.io/) sous l'encadrement de [Mme Caroline Japhet](https://www.math.univ-paris13.fr/~japhet/cjaphetmain.htm). Décomposition de domaines pour les EDP d'advection diffusion.   
 -- Etude théorique du cas stationaire et instationnaire (écriture du problème et de l'algorithme de DD, caractère bien défini et convergence de l'algorithme de Schwarz).   
 -- écriture du schéma espace-temps (Euler implicite en temps et CrouzeixRaviart en espace).   
 -- réalisé en Freefem++       
